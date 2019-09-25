@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class ViewController: NSSplitViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,12 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-
-
+    
+    @IBAction func shareClicked(_ sender: NSView) {
+        guard let detailVC = children[1] as? DetailViewController else { return }
+        guard let image = detailVC.imageView.image else { return }
+        let picker = NSSharingServicePicker(items: [image])
+        picker.show(relativeTo: .zero, of: sender, preferredEdge: .minY)
+    }
 }
 

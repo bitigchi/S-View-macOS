@@ -689,6 +689,30 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <toolbar key="toolbar" implicitIdentifier="2FD9248A-064F-46DE-8F3B-B2232639C467" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="7qG-kn-oci">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="2sU-q4-HyE"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="Zvl-TI-9Jy"/>
+                                <toolbarItem implicitItemIdentifier="F661A4C6-D8F6-431E-97EE-D935A817436C" label="Share" paletteLabel="Share" image="NSShareTemplate" sizingBehavior="auto" id="VYo-ct-Xrn" userLabel="Share">
+                                    <nil key="toolTip"/>
+                                    <button key="view" verticalHuggingPriority="750" id="aqd-TN-YVF">
+                                        <rect key="frame" x="0.0" y="14" width="47" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSShareTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yVe-dq-MAc">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                    <connections>
+                                        <action selector="shareClicked:" target="Oky-zY-oP4" id="sC3-ui-mB0"/>
+                                    </connections>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="Zvl-TI-9Jy"/>
+                                <toolbarItem reference="VYo-ct-Xrn"/>
+                            </defaultToolbarItems>
+                        </toolbar>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -701,10 +725,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--Split View Controller-->
+        <!--View Controller-->
         <scene sceneID="Ugz-Lp-q7W">
             <objects>
-                <splitViewController id="9pM-av-Mn7" sceneMemberID="viewController">
+                <splitViewController id="9pM-av-Mn7" customClass="ViewController" customModule="S_View" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem holdingPriority="260" id="EpE-Gd-lwg"/>
                         <splitViewItem id="Gqm-Im-Dde"/>
@@ -734,13 +758,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView autohidesScrollers="YES" horizontalLineScroll="42" horizontalPageScroll="10" verticalLineScroll="42" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeB-6G-8Ue">
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeB-6G-8Ue">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                                 <clipView key="contentView" drawsBackground="NO" id="5eB-Rn-Ncq">
                                     <rect key="frame" x="1" y="1" width="448" height="298"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="40" viewBased="YES" id="8rG-7N-pd0">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="8rG-7N-pd0">
                                             <rect key="frame" x="0.0" y="0.0" width="448" height="298"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -760,16 +784,21 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="a3N-MQ-TEp">
+                                                        <tableCellView id="Hcp-y1-y0b">
                                                             <rect key="frame" x="1" y="1" width="445" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="gxr-cm-N2z">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="445" height="17"/>
+                                                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tgi-CJ-Yqn">
+                                                                    <rect key="frame" x="3" y="0.0" width="17" height="17"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="17" id="hBV-Ac-EIC"/>
+                                                                        <constraint firstAttribute="height" constant="17" id="X4T-dp-ZOE"/>
+                                                                        <constraint firstAttribute="width" constant="17" id="waO-pu-A0r"/>
                                                                     </constraints>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="Nk7-Dz-PmE">
+                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSActionTemplate" id="rP4-Nm-GJs"/>
+                                                                </imageView>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tpG-cE-mdL">
+                                                                    <rect key="frame" x="25" y="0.0" width="420" height="17"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="RgA-64-Udz">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -777,12 +806,16 @@
                                                                 </textField>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="gxr-cm-N2z" firstAttribute="centerY" secondItem="a3N-MQ-TEp" secondAttribute="centerY" id="Wzg-HI-9Ik"/>
-                                                                <constraint firstItem="gxr-cm-N2z" firstAttribute="centerX" secondItem="a3N-MQ-TEp" secondAttribute="centerX" id="fEM-iS-tnC"/>
-                                                                <constraint firstItem="gxr-cm-N2z" firstAttribute="leading" secondItem="a3N-MQ-TEp" secondAttribute="leading" constant="2" id="r8U-5y-f5D"/>
+                                                                <constraint firstItem="Tgi-CJ-Yqn" firstAttribute="leading" secondItem="Hcp-y1-y0b" secondAttribute="leading" constant="3" id="OSE-7g-DrD"/>
+                                                                <constraint firstItem="Tgi-CJ-Yqn" firstAttribute="top" secondItem="tpG-cE-mdL" secondAttribute="top" id="g3P-bb-vWT"/>
+                                                                <constraint firstItem="tpG-cE-mdL" firstAttribute="leading" secondItem="Tgi-CJ-Yqn" secondAttribute="trailing" constant="7" id="gT9-uE-asY"/>
+                                                                <constraint firstItem="Tgi-CJ-Yqn" firstAttribute="centerY" secondItem="Hcp-y1-y0b" secondAttribute="centerY" id="qSq-I9-nnz"/>
+                                                                <constraint firstItem="Tgi-CJ-Yqn" firstAttribute="bottom" secondItem="tpG-cE-mdL" secondAttribute="bottom" id="utt-fA-xik"/>
+                                                                <constraint firstAttribute="trailing" secondItem="tpG-cE-mdL" secondAttribute="trailing" constant="2" id="vBd-DP-nZB"/>
                                                             </constraints>
                                                             <connections>
-                                                                <outlet property="textField" destination="gxr-cm-N2z" id="hsW-8F-csv"/>
+                                                                <outlet property="imageView" destination="Tgi-CJ-Yqn" id="sx5-gd-I0c"/>
+                                                                <outlet property="textField" destination="tpG-cE-mdL" id="fxP-2x-00k"/>
                                                             </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
@@ -807,12 +840,12 @@
                             </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="BeB-6G-8Ue" firstAttribute="leading" secondItem="hPL-YU-chc" secondAttribute="leading" id="GDH-UQ-Gxg"/>
-                            <constraint firstItem="BeB-6G-8Ue" firstAttribute="top" secondItem="hPL-YU-chc" secondAttribute="top" id="e6u-Jj-3Hm"/>
+                            <constraint firstItem="BeB-6G-8Ue" firstAttribute="leading" secondItem="hPL-YU-chc" secondAttribute="leading" id="IVU-wm-ugK"/>
+                            <constraint firstItem="BeB-6G-8Ue" firstAttribute="top" secondItem="hPL-YU-chc" secondAttribute="top" id="TJS-K3-MWM"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="8rG-7N-pd0" id="rwa-qB-9n8"/>
+                        <outlet property="tableView" destination="8rG-7N-pd0" id="EWe-Fn-oeQ"/>
                     </connections>
                 </viewController>
                 <customObject id="mEt-nt-Gv9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -848,4 +881,8 @@
             <point key="canvasLocation" x="308" y="1010"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSActionTemplate" width="14" height="14"/>
+        <image name="NSShareTemplate" width="11" height="16"/>
+    </resources>
 </document>

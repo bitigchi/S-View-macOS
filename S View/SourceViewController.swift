@@ -12,7 +12,7 @@ class SourceViewController: NSViewController, NSTableViewDataSource, NSTableView
     
     @IBOutlet var tableView: NSTableView!
     
-	var pictures = [String]()
+    var pictures = [String]()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -34,8 +34,9 @@ class SourceViewController: NSViewController, NSTableViewDataSource, NSTableView
 
 	func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
 		guard let vw = tableView.makeView(withIdentifier: tableColumn!.identifier, owner: self) as? NSTableCellView else { return nil }
+        let detailVC = children[1] as? DetailViewController
+        vw.imageView?.image = detailVC?.imageView.image
 		vw.textField?.stringValue = pictures[row]
-
 		return vw
 	}
 
